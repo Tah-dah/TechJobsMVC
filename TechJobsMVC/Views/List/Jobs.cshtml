@@ -1,13 +1,20 @@
 ﻿<div class="container body-content">
 
     <h1>@ViewBag.title</h1>
-    
-    <h3>@ViewBag.jobs.Count Results</h3> 
-    
-   @{
-       @foreach (var job in ViewBag.jobs)
+
+
+   
+    @if (ViewBag.jobs.Count == 0)
+    {
+        <p>No events yet!</p>
+    }
+    else
+    {
+
+
+        @foreach (var job in ViewBag.jobs)
         {
-            <table class="job-listing">
+            <table class="table">
 
                 <tr>
                     <th>
@@ -64,25 +71,10 @@
                 </tr>
 
             </table>
-
-       //@foreach (Dictionary<string,string>job in jobs)
-       // {
-          //  <table class="job-listing">
-            //    @foreach(KeyValuePair<string, string>job in jobs)
-            //    {
-
-                  //  <tr>
-                 //       <th>@job.Key.Substring(0,0)@job.Key.Substring( 0,job.Key.Length):</th>
-
-                 //   </tr>
-              //  }
-       // }
-            
-            
-            
-        //    </table>
         }
+
     }
+
 
 
 </div>
